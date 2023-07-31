@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>question 1</h3>
+    <button id="btn" type="button" onclick="demo()" >click</button><br><br>
+    
+    <h3>question 2</h3>
+    <button id="btn1" type="button" onclick="demo()">click me</button>
+    <h1 id="sum"></h1>
+    <h1 id="avg"></h1>
+
+    <h3>question 3</h3>
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+
+    <h3>question 4</h3>
+    <button id="q3">click</button>
+
+    <h3>question 5</h3>
+    <button id="q5">click</button>
+
+    <h3>question 6</h3>
+    <button id="q6">click me</button>
+
+    <h3>question 7</h3>
+    <button id="q7">calculator</button>
+
+    <h3>question 8</h3>
+    <button id="q8">click me</button>
+    
+    <script>
+        
+                document.getElementById('btn').addEventListener('click',function(){alert('this is alert')})
+                document.getElementById('btn1').addEventListener('click',function(){
+                var total = 0;
+                var sub = 1;
+                
+                for(var i=0; i<5; i++)
+                {
+                    total+=parseInt(prompt("enter a number  "+sub++));
+                }
+                var avg = total/5;
+                if(avg>30)
+                {
+                    window.alert("congrats! you passed");
+                }
+                else {
+                    window.alert("Better luck next time");
+                }
+                document.getElementById('sum').innerHTML=("total is "+total);
+                document.getElementById('avg').innerHTML=('average is '+total/5);})
+
+                
+        
+
+                document.getElementById("red").addEventListener('mouseover', function()
+                {
+                    this.style.backgroundColor ='red'
+                }
+                );
+                /* red green blue button */
+                document.getElementById('red').addEventListener('mouseout',function()
+                {
+                    this.style.backgroundColor=''
+                })
+
+                document.getElementById('blue').addEventListener('mouseover',function()
+                {
+                    this.style.backgroundColor='blue'
+                }
+                );
+                document.getElementById('blue').addEventListener('mouseout',function()
+                {
+                    this.style.backgroundColor=''
+                }
+                );
+                document.getElementById('green').addEventListener('mouseover',function()
+                {
+                    this.style.backgroundColor='green'
+                }
+                );
+                document.getElementById('green').addEventListener('mouseout',function()
+                {
+                    this.style.backgroundColor=''
+                }
+                );
+
+                document.getElementById('q3').addEventListener('click',function()
+                {
+                    var radies;
+                    let area;
+                    
+                radies=parseInt(prompt("Enter the radies "));
+                area = Math.PI*radies*radies
+                window.alert("area is "+ area);
+                })
+                
+                document.getElementById('q5').addEventListener('click',function()
+                {
+                    var day;
+                    day = parseInt(prompt("enter a number between 1-7 "))
+                    switch(day)
+                    {
+                        case 1:window.alert("today is monday");break;
+                        case 2:window.alert("today is tuesday");break;
+                        case 3:window.alert("today is wednesday");break;
+                        case 4:window.alert("today is thuresday");break;
+                        case 5:window.alert("today is friday");break;
+                        case 6:window.alert("today is saturday");break;
+                        case 7:window.alert("today is sunday");break;
+
+                        default:window.alert("invalid input");break;
+
+                    }
+                })
+
+                document.getElementById('q6').addEventListener('click',function()
+                {
+                    if(confirm("press ok to brows google")==true)
+                    {
+                        window.location.href="https://www.google.com/";
+                        
+                    }
+                    else
+                    {
+                        window.alert("you decided to stay");
+                    }
+                })
+
+                document.getElementById('q7').addEventListener('click',function()
+                {
+                    var n1 = parseInt(prompt('enter the first number'))
+                    var n2 = parseInt(prompt('enter the second number'))
+                    var op = parseInt(prompt('enter the operator number\n1.add\n2.sub\n3.mul\n4.dev'))
+
+                    switch(op)
+                    {
+                        case 1: result = n1+n2;break;
+                        case 1: result = n1-n2;break;
+                        case 1: result = n1*n2;break;
+                        case 1: result = n1/n2;break;
+                    }
+                    window.alert("answer is "+result)
+                })
+                
+                document.getElementById('q8').addEventListener('click',function()
+                {
+                    var nic=(prompt('enter your nic number '));
+                    var byear = nic.substring(0, 4);
+                    window.alert(byear)
+                })
+
+                
+    </script>
+
+    
+</body>
+</html>
